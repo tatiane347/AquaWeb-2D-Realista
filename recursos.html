@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos - AquaWeb 2D Realista</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    
+    <video autoplay muted loop id="videoBackground">
+        <source src="aquarium_bg.mp4" type="video/mp4">
+        <source src="aquarium_bg.webm" type="video/webm">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo AquaWeb 2D Realista" class="site-logo">
+            </a>
+            <span class="site-name">AquaWeb 2D Realista</span>
+        </div>
+        <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        <h1>Recursos e Funcionalidades</h1>
+        <p>Conheça as ferramentas e opções que o AquaWeb 2D Realista oferece para personalizar seu aquário virtual.</p>
+        <p>Você pode adicionar e remover peixes, ajustar a iluminação, e até mesmo mudar o tipo de fundo.</p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AquaWeb 2D Realista. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="assets/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="assets/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.main-header');
+            if (header) {
+                header.style.background = 'rgba(0, 50, 100, 0.4)';
+            }
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.main-nav');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

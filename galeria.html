@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Produtos - AquaWeb 2D Realista</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    
+    <video autoplay muted loop id="videoBackground">
+        <source src="aquarium_bg.mp4" type="video/mp4">
+        <source src="aquarium_bg.webm" type="video/webm">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo AquaWeb 2D Realista" class="site-logo">
+            </a>
+            <span class="site-name">AquaWeb 2D Realista</span>
+        </div>
+        <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="site-content gallery-page-content">
+        <h1>Nossa Galeria de Aquários</h1>
+        <p>
+            Clique nas miniaturas para ver os detalhes em tela cheia e navegar entre as fotos.
+        </p>
+
+        <div class="gallery-grid">
+            <img src="galeria/aquario-agua-doce.jpg" alt="Aquário de Água Doce" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            <img src="galeria/aquario-marinho.jpg" alt="Aquário Marinho" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <img src="galeria/invertebrados.jpg" alt="Invertebrados" onclick="openModal();currentSlide(3)" class="hover-shadow">
+            <img src="galeria/plantas-aquaticas.jpg" alt="Plantas Aquáticas" onclick="openModal();currentSlide(4)" class="hover-shadow">
+            <img src="galeria/equipe-especialista.jpg" alt="Equipe de Especialistas" onclick="openModal();currentSlide(5)" class="hover-shadow">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides-lightbox">
+                <img src="galeria/aquario-agua-doce.jpg" style="width:100%">
+            </div>
+            <div class="mySlides-lightbox">
+                <img src="galeria/aquario-marinho.jpg" style="width:100%">
+            </div>
+            <div class="mySlides-lightbox">
+                <img src="galeria/invertebrados.jpg" style="width:100%">
+            </div>
+            <div class="mySlides-lightbox">
+                <img src="galeria/plantas-aquaticas.jpg" style="width:100%">
+            </div>
+            <div class="mySlides-lightbox">
+                <img src="galeria/equipe-especialista.jpg" style="width:100%">
+            </div>
+            <a class="prev-lightbox" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-lightbox" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AquaWeb 2D Realista. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="assets/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="assets/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.main-header');
+            if (header) {
+                header.style.background = 'rgba(0, 50, 100, 0.4)';
+            }
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.main-nav');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+
+        // =========================================================
+        // CÓDIGO JAVASCRIPT DO LIGHTBOX
+        // =========================================================
+        let slideIndex = 1;
+
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides-lightbox");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

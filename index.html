@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - AquaWeb 2D Realista</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    
+    <video autoplay muted loop id="videoBackground">
+        <source src="aquarium_bg.mp4" type="video/mp4">
+        <source src="aquarium_bg.webm" type="video/webm">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Logo AquaWeb 2D Realista" class="site-logo">
+            </a>
+            <span class="site-name">AquaWeb 2D Realista</span>
+        </div>
+        <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        <h1>Bem-vindo ao AquaWeb 2D Realista!</h1>
+        <p>Mergulhe em um ambiente aquático tranquilo enquanto explora nosso site.</p>
+        <p>Os peixes se movem livremente em nosso fundo dinâmico.</p>
+    </div>
+
+    <section class="portfolio-section">
+        <h2>Sobre o Projeto: AquaWeb 2D Realista</h2>
+        <p>Este projeto foi criado com o objetivo de demonstrar habilidades em desenvolvimento web front-end. O AquaWeb 2D Realista é um site fictício que simula um aquário virtual, oferecendo uma experiência interativa e visualmente atraente para o usuário.</p>
+        
+        <div class="portfolio-details">
+            <h3>Tecnologias Utilizadas:</h3>
+            <ul>
+                <li><strong>HTML:</strong> Para estruturar todo o conteúdo e as páginas do site.</li>
+                <li><strong>CSS:</strong> Para estilizar o design responsivo, a navegação, os botões e a aparência geral.</li>
+                <li><strong>JavaScript:</strong> Para adicionar interatividade, como a funcionalidade de galeria modal na página "Galeria".</li>
+            </ul>
+        </div>
+
+        <div class="portfolio-details">
+            <h3>Desafios e Soluções:</h3>
+            <p>Durante o desenvolvimento, enfrentei desafios comuns de design e funcionalidade, como:</p>
+            <ul>
+                <li><strong>Posicionamento do Rodapé:</strong> O rodapé do site subia para o meio da página. O problema foi resolvido usando `min-height: 100vh;` no CSS, garantindo que o conteúdo principal ocupasse toda a altura da tela.</li>
+                <li><strong>Galeria de Fotos:</strong> O objetivo era criar uma galeria de fotos interativa. O desafio foi superado com o uso de HTML, CSS e JavaScript para desenvolver uma funcionalidade de lightbox, que permite aos usuários clicar em uma miniatura e navegar por uma versão maior da foto.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AquaWeb 2D Realista. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="assets/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="assets/instagram.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.main-header');
+            if (header) {
+                header.style.background = 'rgba(0, 50, 100, 0.4)';
+            }
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.main-nav');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
